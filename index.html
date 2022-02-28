@@ -17,14 +17,17 @@
         <h1 class="text-success text-center fw-bold">Welcome To Our Phone Shop</h1>
         <!-- search filed  -->
         <div class="input-group mb-3 mt-3 w-50 mx-auto">
-            <input type="text" class="form-control fw-bolder" placeholder="Search phones"
+            <input id="search-field" type="text" class="form-control fw-bolder" placeholder="Search phones"
                 aria-label="Recipient's username" aria-describedby="button-addon2">
-            <button class="btn btn-outline-success fw-bolder" type="button" id="button-addon2">Search</button>
+            <button onclick="loadPhones()" class="btn btn-outline-success fw-bolder" type="button"
+                id="button-addon2">Search</button>
         </div>
     </header>
     <main>
         <section>
+            <div id="phones-container" class="row row-cols-1 row-cols-md-3 g-5 mt-5 ">
 
+            </div>
         </section>
     </main>
     <!-- script file  -->
