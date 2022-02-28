@@ -41,16 +41,23 @@ const displayPhoneDetails = phone => {
     const container = document.getElementById('phone-details-container');
     const div = document.createElement('div');
     div.innerHTML = `
-    <div class="card w-50 mx-auto">
+    <div class="card w-50 mx-auto ">
         <img src="${phone.image}" class="card-img-top" alt="...">
         <div class="card-body">
-            <h5 class="card-title">${phone.name}</h5>
-            <h6 class="card-title">${phone.brand}</h6>
-            <p class="card-text">${phone.releaseDate ? phone.releaseDate : 'No release date found'}</p>
-            <p class="card-text">${phone.mainFeatures.chipSet}</p>
-            <p class="card-text">${phone.mainFeatures.displaySize}</p>
-            <p class="card-text">${phone.mainFeatures.memory}</p>
-
+            <h5 class="card-title"><span class="fw-bolder">Name:</span> ${phone.name}</h5>
+            <h6 class="card-text"><span class="fw-bolder">Brand:</span> ${phone.brand}</h6>
+            <p class="card-text"><span class="fw-bolder">Release Date:</span> ${phone.releaseDate ? phone.releaseDate : 'No release date found'}</p>
+            <p class="card-text"><span class="fw-bolder">Chipset:</span> ${phone.mainFeatures.chipSet}</p>
+            <p class="card-text"><span class="fw-bolder">Display Size:</span> ${phone.mainFeatures.displaySize}</p>
+            <p class="card-text"><span class="fw-bolder">Memory:</span> ${phone.mainFeatures.memory}</p>
+            <p class="card-text"><span class="fw-bolder">Sensors:</span> ${phone.mainFeatures.sensors}</p>
+            <p class="card-text"><span class="fw-bolder">Bluetooth:</span> ${phone.others.Bluetooth}</p>
+            <p class="card-text"><span class="fw-bolder">GPS:</span> ${phone.others.GPS}</p>
+            <p class="card-text"><span class="fw-bolder">NFC:</span> ${phone.others.NFC}</p>
+            <p class="card-text"><span class="fw-bolder">Radio:</span> ${phone.others.Radio}</p>
+            <p class="card-text"><span class="fw-bolder">USB:</span> ${phone.others.USB}</p>
+            <p class="card-text"><span class="fw-bolder">WLAN:</span> ${phone.others.WLAN}</p>
+            
         </div>   
     </div>
     `;
