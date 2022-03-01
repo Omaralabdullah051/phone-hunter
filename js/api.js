@@ -18,6 +18,8 @@ const loadPhones = () => {
     const searchField = document.getElementById('search-field');
     const searchText = searchField.value;
     spinner('block');
+    document.getElementById('see-more-btn').style.display = 'none';
+    document.getElementById('more-phone-container').textContent = '';
     if (searchField.value === '') {
         spinner('none');
         message('No result found');
