@@ -37,14 +37,12 @@ const loadPhones = () => {
 
 //Display phones on UI
 const displayPhones = phones => {
-    console.log(phones);
     const container = document.getElementById('phones-container');
     spinner('none');
     message('No result found');
     textContent();
     const maximumPhones = phones.slice(0, 20);
     maximumPhones?.forEach(phone => {
-        console.log(phone);
         const div = document.createElement('div');
         div.innerHTML = `
         <div class="col mb-3">
@@ -70,7 +68,6 @@ const displayPhones = phones => {
             container.textContent = '';
             const otherPhones = phones.slice(20);
             otherPhones?.forEach(phone => {
-                console.log(phone);
                 const div = document.createElement('div');
                 div.innerHTML = `
                 <div class="col mb-3">
@@ -102,7 +99,6 @@ const loadPhoneDetails = phone => {
 
 //Display phone details
 const displayPhoneDetails = phone => {
-    console.log(phone);
     const container = document.getElementById('phone-details-container');
     spinner('none');
     message('');
