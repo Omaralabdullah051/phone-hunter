@@ -1,6 +1,6 @@
 //handle error
-const error = text => {
-    document.getElementById('error').innerText = text;
+const message = text => {
+    document.getElementById('message').innerText = text;
 };
 //handle spinner
 const spinner = displayType => {
@@ -20,7 +20,7 @@ const loadPhones = () => {
     spinner('block');
     if (searchField.value === '') {
         spinner('none');
-        error('No result found');
+        message('No result found');
         textContent();
         document.getElementById('see-more-btn').style.display = 'none';
     }
@@ -38,7 +38,7 @@ const displayPhones = phones => {
     console.log(phones);
     const container = document.getElementById('phones-container');
     spinner('none');
-    error('No result found');
+    message('No result found');
     textContent();
     const maximumPhones = phones.slice(0, 20);
     maximumPhones?.forEach(phone => {
@@ -58,12 +58,12 @@ const displayPhones = phones => {
         `;
         container.appendChild(div);
         spinner('none');
-        error(`${phones.length} results found`);
+        message(`${phones.length} results found`);
     })
+    // show see more button and add event handler 
     if (phones.length > 20) {
         document.getElementById('see-more-btn').style.display = 'block';
         document.getElementById('see-more-btn').addEventListener('click', function () {
-            // const container = document.getElementById('phones-container');
             const container = document.getElementById('more-phone-container');
             container.textContent = '';
             const otherPhones = phones.slice(20);
@@ -84,15 +84,10 @@ const displayPhones = phones => {
                 `;
                 container.appendChild(div);
                 document.getElementById('see-more-btn').style.display = 'none';
-
-
             })
         })
     }
 };
-
-
-
 
 
 //Load phone details 
@@ -108,11 +103,12 @@ const displayPhoneDetails = phone => {
     console.log(phone);
     const container = document.getElementById('phone-details-container');
     spinner('none');
-    error('');
+    message('');
     textContent();
+    document.getElementById('see-more-btn').style.display = 'none';
     const div = document.createElement('div');
     div.innerHTML = `
-    <div class="card w-50 mx-auto ">
+    <div class="card">
         <img src="${phone.image}" class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title"><span class="fw-bolder">Name:</span> ${phone.name}</h5>
